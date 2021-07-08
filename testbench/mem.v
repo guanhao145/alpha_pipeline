@@ -26,8 +26,10 @@ module mem (
   logic [63:0] next_mem2proc_data;
   logic  [3:0] next_mem2proc_response, next_mem2proc_tag;
 
-  logic [63:0]                    unified_memory  [`MEM_64BIT_LINES - 1:0];
+  logic [63:0]                    unified_memory  [`MEM_64BIT_LINES - 1:0];		// unpacked dimension [`MEM_64BIT_LINES-1 : 0]
   logic [63:0]                    loaded_data     [`NUM_MEM_TAGS:1];
+// https://www.doulos.com/knowhow/systemverilog/systemverilog-tutorials/systemverilog-data-types/
+
   logic [`NUM_MEM_TAGS:1]  [15:0] cycles_left;
   logic [`NUM_MEM_TAGS:1]         waiting_for_bus;
 
